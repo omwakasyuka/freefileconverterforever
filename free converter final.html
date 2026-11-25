@@ -1,0 +1,1931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FREE CONVERTER FOREVER — Free Online Image & Document Converter</title>
+<meta name="description" content="Convert & compress images, PDF, Word and data files up to 1 GB online. Image to Word, PDF to Word, Word to PDF. 100% free forever. No signup, no watermark, no payment.">
+<meta name="theme-color" content="#FFD60A">
+<style>
+:root{
+  --ink:#0f172a; --muted:#64748b; --line:#e2e8f0;
+  --bg:#ffffff; --card:#ffffff;
+  --yellow:#FFD60A; --yellow-soft:#FFE873; --yellow-deep:#F5B700;
+  --purple:#6D28D9; --purple-deep:#4C1D95; --purple-soft:#EDE9FE;
+  --brand:#6D28D9; --brand2:#8B5CF6;
+  --ok:#059669; --warn:#d97706; --danger:#dc2626;
+  --radius:14px; --shadow:0 10px 30px rgba(15,23,42,.08);
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,Inter,Arial,sans-serif;
+  background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+h1,h2,h3{line-height:1.2;margin:0 0 .5em}
+h1{font-size:clamp(1.9rem,4.2vw,3rem);letter-spacing:-.02em}
+h2{font-size:clamp(1.4rem,2.6vw,2rem);letter-spacing:-.01em}
+p{margin:0 0 1em}
+a{color:var(--brand)}
+
+/* ============ HEADER — YELLOW ============ */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:linear-gradient(135deg,#FFE873 0%, #FFD60A 45%, #F5B700 100%);
+  border-bottom:2px solid rgba(0,0,0,.10);
+  box-shadow:0 4px 18px rgba(245,183,0,.28);
+}
+.topbar .wrap{display:flex;align-items:center;gap:16px;height:68px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:-.02em;
+  color:#2A2200;text-decoration:none;font-size:.98rem}
+.brand b{color:var(--purple-deep)}
+.logo{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;color:#fff;font-size:.78rem;
+  background:linear-gradient(135deg,var(--purple),var(--purple-deep));
+  box-shadow:0 6px 14px rgba(109,40,217,.42);flex:0 0 auto}
+.topbar nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.topbar nav button{
+  border:0;background:transparent;color:#4A3D00;font:inherit;font-weight:700;font-size:.9rem;
+  padding:8px 13px;border-radius:10px;cursor:pointer;transition:.18s
+}
+.topbar nav button:hover{background:rgba(255,255,255,.65);color:var(--purple-deep)}
+
+/* ============ HERO ============ */
+.hero{
+  background:linear-gradient(180deg,#FFFDF2 0%, #FFFFFF 70%);
+  border-bottom:1px solid var(--line);padding:56px 0 40px;text-align:center
+}
+.hero .badge{
+  display:inline-flex;align-items:center;gap:8px;background:#FFF6CC;color:#7A5B00;
+  font-weight:800;font-size:.78rem;padding:7px 15px;border-radius:999px;margin-bottom:18px;
+  border:1.5px solid #FFE873;text-transform:uppercase;letter-spacing:.07em
+}
+.hero p.lead{max-width:660px;margin:0 auto 26px;color:var(--muted);font-size:1.06rem}
+.pill-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:24px}
+.pill{background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:7px 15px;font-size:.83rem;
+  font-weight:600;color:#334155;box-shadow:0 2px 6px rgba(15,23,42,.04)}
+
+/* ============ SLIDER ============ */
+.slider-section{padding:44px 0 10px}
+.slider{
+  position:relative;overflow:hidden;border-radius:20px;
+  box-shadow:0 22px 50px rgba(76,29,149,.18);border:1px solid #e9e4f7
+}
+.slide-track{display:flex;transition:transform .65s cubic-bezier(.45,.05,.2,1);will-change:transform}
+.slide{
+  min-width:100%;min-height:280px;padding:44px 48px;color:#fff;
+  display:flex;align-items:center;gap:34px;position:relative;overflow:hidden
+}
+.slide .txt{flex:1;position:relative;z-index:3;max-width:620px}
+.slide h3{font-size:clamp(1.3rem,2.6vw,1.85rem);margin:0 0 .45em;letter-spacing:-.02em}
+.slide p{margin:0;opacity:.94;font-size:1rem;max-width:560px}
+.slide .kicker{
+  display:inline-block;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.35);
+  font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+  padding:5px 12px;border-radius:999px;margin-bottom:14px
+}
+.slide .art{
+  flex:0 0 auto;width:170px;height:170px;position:relative;z-index:3;
+  display:grid;place-items:center;font-size:4.6rem;line-height:1;
+  background:rgba(255,255,255,.16);border:1.5px solid rgba(255,255,255,.32);
+  border-radius:28px;backdrop-filter:blur(4px)
+}
+.slide .blob{position:absolute;border-radius:50%;filter:blur(2px);opacity:.28;z-index:1}
+.slide .b1{width:340px;height:340px;right:-90px;top:-140px;background:#fff}
+.slide .b2{width:220px;height:220px;right:150px;bottom:-120px;background:#fff;opacity:.16}
+
+.s1{background:linear-gradient(135deg,#6D28D9,#8B5CF6 55%,#A78BFA)}
+.s2{background:linear-gradient(135deg,#0EA5E9,#0284C7 55%,#0369A1)}
+.s3{background:linear-gradient(135deg,#059669,#10B981 55%,#34D399)}
+.s4{background:linear-gradient(135deg,#F59E0B,#F5B700 55%,#FACC15)}
+.s5{background:linear-gradient(135deg,#DB2777,#EC4899 55%,#F472B6)}
+.s6{background:linear-gradient(135deg,#DC2626,#EF4444 55%,#F87171)}
+
+.slider-nav{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:6;
+  width:44px;height:44px;border-radius:50%;border:0;cursor:pointer;
+  background:rgba(255,255,255,.9);color:#3b0764;font-size:1.35rem;font-weight:700;line-height:1;
+  display:grid;place-items:center;box-shadow:0 6px 18px rgba(15,23,42,.22);transition:.2s
+}
+.slider-nav:hover{background:#fff;transform:translateY(-50%) scale(1.08)}
+.slider-nav.prev{left:16px}
+.slider-nav.next{right:16px}
+.slider-dots{position:absolute;left:0;right:0;bottom:16px;display:flex;gap:9px;justify-content:center;z-index:6}
+.dot{width:11px;height:11px;border-radius:50%;border:0;cursor:pointer;padding:0;
+  background:rgba(255,255,255,.48);transition:.25s}
+.dot.active{background:#fff;width:30px;border-radius:999px}
+
+@media(max-width:720px){
+  .slide{padding:32px 24px;flex-direction:column;text-align:center;gap:20px;min-height:auto}
+  .slide .art{width:110px;height:110px;font-size:3rem;border-radius:22px}
+  .slide .txt{max-width:100%}
+  .slider-nav{width:38px;height:38px;font-size:1.1rem}
+  .slider-nav.prev{left:8px}.slider-nav.next{right:8px}
+}
+
+/* ============ CARDS & CONVERTER ============ */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+section.block{padding:52px 0}
+.converter{margin-top:8px;padding:22px}
+.tabs{display:flex;gap:8px;border-bottom:1px solid var(--line);margin:-22px -22px 20px;padding:14px 22px 0;flex-wrap:wrap}
+.tab{border:0;background:transparent;font:inherit;font-weight:700;color:var(--muted);cursor:pointer;
+  padding:10px 14px;border-radius:10px 10px 0 0;border-bottom:3px solid transparent;font-size:.94rem}
+.tab.active{color:var(--purple);border-bottom-color:var(--purple);background:var(--purple-soft)}
+
+.dropzone{
+  border:2px dashed #C4B5FD;border-radius:var(--radius);padding:38px 20px;text-align:center;
+  background:#FCFBFF;cursor:pointer;transition:.2s
+}
+.dropzone:hover,.dropzone.drag{background:var(--purple-soft);border-color:var(--purple)}
+.dropzone .big{font-size:2.2rem;line-height:1}
+.dropzone h3{margin:.5em 0 .2em;font-size:1.08rem}
+.dropzone small{color:var(--muted)}
+
+.limit-note{
+  display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:.78rem;font-weight:700;
+  background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;padding:4px 12px;border-radius:999px
+}
+
+.filelist{display:flex;flex-direction:column;gap:8px;margin-top:16px}
+.filechip{display:flex;align-items:center;gap:10px;background:#f1f5f9;border:1px solid var(--line);
+  border-radius:10px;padding:9px 12px;font-size:.88rem}
+.filechip .nm{font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1}
+.filechip .sz{color:var(--muted);font-size:.8rem;white-space:nowrap}
+.filechip button{border:0;background:#e2e8f0;color:#475569;width:24px;height:24px;border-radius:50%;
+  cursor:pointer;font-weight:700;line-height:1}
+.filechip button:hover{background:#fecaca;color:var(--danger)}
+
+.controls{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end;margin-top:18px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field label{font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+select,input[type=text],input[type=email],input[type=password],input[type=number]{
+  font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink);min-width:150px
+}
+select:focus,input:focus{outline:2px solid #DDD6FE;border-color:var(--purple)}
+input[type=range]{width:150px;accent-color:var(--purple)}
+.btn{
+  border:0;border-radius:11px;font:inherit;font-weight:700;padding:12px 22px;cursor:pointer;transition:.18s;
+  background:linear-gradient(135deg,var(--purple),var(--brand2));color:#fff;
+  box-shadow:0 8px 20px rgba(109,40,217,.30)
+}
+.btn:hover{transform:translateY(-1px);box-shadow:0 12px 26px rgba(109,40,217,.38)}
+.btn:disabled{opacity:.55;cursor:not-allowed;transform:none;box-shadow:none}
+.btn.ghost{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:none}
+.btn.ghost:hover{background:#f8fafc}
+.btn.danger{background:linear-gradient(135deg,#ef4444,#dc2626);box-shadow:0 8px 20px rgba(220,38,38,.25)}
+.btn.sm{padding:8px 14px;font-size:.85rem}
+
+.results{margin-top:20px;display:flex;flex-direction:column;gap:10px}
+.result{display:flex;align-items:center;gap:12px;background:#ecfdf5;border:1px solid #a7f3d0;
+  border-radius:12px;padding:12px 14px;font-size:.9rem}
+.result .nm{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.result .sz{color:var(--ok);font-size:.8rem;font-weight:700;white-space:nowrap}
+.result .save{background:#059669;color:#fff;font-size:.72rem;font-weight:800;padding:3px 9px;border-radius:999px}
+.status{margin-top:14px;font-size:.9rem;font-weight:600;color:var(--purple);display:flex;align-items:center;gap:8px}
+.spinner{width:15px;height:15px;border:2.5px solid #DDD6FE;border-top-color:var(--purple);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+.progressbar{height:8px;background:#EDE9FE;border-radius:999px;overflow:hidden;margin-top:10px}
+.progressbar > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--purple),var(--brand2));
+  border-radius:999px;transition:width .25s}
+
+/* ============ INFO SECTIONS ============ */
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.info{padding:22px}
+.info .ic{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;font-size:1.25rem;
+  background:var(--purple-soft);margin-bottom:12px}
+.info h3{font-size:1.05rem;margin-bottom:.35em}
+.info p{color:var(--muted);font-size:.92rem;margin:0}
+details{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+details summary{font-weight:700;cursor:pointer;font-size:.96rem}
+details p{margin:.7em 0 0;color:var(--muted);font-size:.9rem}
+
+/* ============ ADMIN ============ */
+#view-admin{padding:40px 0 70px;min-height:70vh}
+.login-card{max-width:420px;margin:40px auto;padding:32px}
+.login-card h2{text-align:center}
+.login-card p.sub{text-align:center;color:var(--muted);font-size:.9rem;margin-bottom:22px}
+.login-card form{display:flex;flex-direction:column;gap:14px}
+.login-card input{width:100%}
+.hint{font-size:.8rem;color:#7A5B00;background:#FFFBEB;border:1px solid #FDE68A;padding:10px 12px;border-radius:10px}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-bottom:24px}
+.stat{padding:18px}
+.stat .k{font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.stat .v{font-size:1.7rem;font-weight:800;letter-spacing:-.02em;margin-top:4px}
+.stat .v small{font-size:.85rem;font-weight:600;color:var(--muted)}
+
+.panel{padding:22px;margin-bottom:20px}
+.panel h3{font-size:1.05rem;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+table{width:100%;border-collapse:collapse;font-size:.86rem}
+th{text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+  padding:8px 10px;border-bottom:1px solid var(--line)}
+td{padding:9px 10px;border-bottom:1px solid #f1f5f9}
+tr:last-child td{border-bottom:0}
+.tbl-wrap{overflow-x:auto}
+.empty{text-align:center;color:var(--muted);padding:26px;font-size:.9rem}
+.tag{display:inline-block;background:var(--purple-soft);color:var(--purple);font-weight:700;font-size:.72rem;
+  padding:3px 9px;border-radius:999px}
+.tag.ok{background:#ecfdf5;color:var(--ok)}
+.tag.err{background:#fef2f2;color:var(--danger)}
+.switch{display:flex;align-items:center;gap:10px;font-size:.9rem;font-weight:600;padding:7px 0}
+.switch input{width:auto;accent-color:var(--purple);min-width:0}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end}
+
+/* ============ TOAST ============ */
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(120%);
+  background:#3B0764;color:#fff;padding:12px 22px;border-radius:12px;font-weight:600;font-size:.9rem;
+  box-shadow:0 14px 34px rgba(59,7,100,.35);z-index:200;transition:transform .3s;max-width:90vw;text-align:center}
+#toast.show{transform:translateX(-50%) translateY(0)}
+#toast.error{background:var(--danger)}
+#toast.warn{background:var(--warn)}
+
+/* ============ FOOTER — PURPLE ============ */
+footer{
+  background:linear-gradient(135deg,#4C1D95 0%, #6D28D9 45%, #7C3AED 100%);
+  color:#DDD6FE;padding:46px 0;margin-top:48px;font-size:.9rem;
+  border-top:4px solid var(--yellow);
+}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px;justify-content:space-between;align-items:center}
+footer strong{color:#fff;font-size:1rem;letter-spacing:-.01em}
+footer .free{color:var(--yellow);font-weight:800}
+footer .flinks{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+footer .flinks button{
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#EDE9FE;
+  font:inherit;font-size:.8rem;font-weight:600;padding:6px 13px;border-radius:999px;cursor:pointer;transition:.2s
+}
+footer .flinks button:hover{background:rgba(255,255,255,.24);color:#fff}
+
+@media(max-width:640px){
+  .hero{padding:40px 0 32px}
+  .converter{padding:16px}
+  .tabs{margin:-16px -16px 16px;padding:12px 16px 0}
+  .topbar .wrap{height:auto;padding:10px 16px;flex-wrap:wrap}
+  .topbar nav{margin-left:0;width:100%}
+}
+</style>
+</head>
+<body>
+
+<!-- ===================== HEADER (YELLOW) ===================== -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#" data-go="main">
+      <span class="logo">FC</span>
+      <span>FREE CONVERTER <b>FOREVER</b></span>
+    </a>
+    <nav>
+      <button data-go="main">Converter</button>
+      <button data-scroll="how">How it works</button>
+      <button data-scroll="faq">FAQ</button>
+      <button data-go="admin">Admin</button>
+    </nav>
+  </div>
+</header>
+
+<!-- ===================== MAIN VIEW ===================== -->
+<main id="view-main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap">
+      <span class="badge">💜 100% Free · Forever · No Payment</span>
+      <h1>Convert &amp; compress any file.<br>Up to 1&nbsp;GB per file.</h1>
+      <p class="lead">
+        FREE CONVERTER FOREVER turns pictures and documents from one format into another —
+        and shrinks huge files down to size. Image → Word, PDF ↔ Word, images, spreadsheets, ZIP archiving.
+        No signup, no watermark, no fees.
+      </p>
+      <div class="pill-row">
+        <span class="pill">📦 Files up to 1 GB</span>
+        <span class="pill">🖼️ → 📝 Image to Word</span>
+        <span class="pill">📄 PDF ↔ Word</span>
+        <span class="pill">🗜️ Compress anything</span>
+        <span class="pill">🔒 Files never leave your device</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SLIDING IMAGES ===================== -->
+  <section class="slider-section wrap">
+    <div class="slider" id="slider" aria-label="Feature highlights" aria-roledescription="carousel">
+      <div class="slide-track" id="slideTrack">
+
+        <div class="slide s1">
+          <span class="blob b1"></span><span class="blob b2"></span>
+          <div class="txt">
+            <span class="kicker">Images</span>
+            <h3>Every picture, every format</h3>
+            <p>Convert PNG, JPG, JPEG, WEBP, BMP and GIF into each other, drop them straight into a Word document, or turn a whole batch of photos into one PDF.</p>
+          </div>
+          <div class="art">🖼️</div>
+        </div>
+
+        <div class="slide s2">
+          <span class="blob b1"></span><span class="blob b2"></span>
+          <div class="txt">
+            <span class="kicker">PDF ⇄ Word</span>
+            <h3>PDF to Word, Word to PDF</h3>
+            <p>Turn a PDF into an editable .docx file, or export any Word document straight to PDF. Two clicks, no software, no signup.</p>
+          </div>
+          <div class="art">📄</div>
+        </div>
+
+        <div class="slide s6">
+          <span class="blob b1"></span><span class="blob b2"></span>
+          <div class="txt">
+            <span class="kicker">Compress · New</span>
+            <h3>Shrink files up to 1 GB</h3>
+            <p>Compress photos, PDFs and whole batches of files. Choose from Light to Extreme, then download — smaller, faster, easier to share.</p>
+          </div>
+          <div class="art">🗜️</div>
+        </div>
+
+        <div class="slide s3">
+          <span class="blob b1"></span><span class="blob b2"></span>
+          <div class="txt">
+            <span class="kicker">Privacy first</span>
+            <h3>Your files never leave your device</h3>
+            <p>All conversion and compression happens inside your own browser using JavaScript. Nothing is uploaded, nothing is stored, nothing is shared. Ever.</p>
+          </div>
+          <div class="art">🔒</div>
+        </div>
+
+        <div class="slide s4">
+          <span class="blob b1"></span><span class="blob b2"></span>
+          <div class="txt">
+            <span class="kicker">Spreadsheets & data</span>
+            <h3>Excel, CSV and JSON made simple</h3>
+            <p>XLSX ⇄ CSV, CSV → JSON, JSON → CSV, sheets to HTML or PDF. Your data, in whatever shape you need it.</p>
+          </div>
+          <div class="art">📊</div>
+        </div>
+
+        <div class="slide s5">
+          <span class="blob b1"></span><span class="blob b2"></span>
+          <div class="txt">
+            <span class="kicker">Forever free</span>
+            <h3>No payment. No catch. No limits.</h3>
+            <p>No subscriptions, no credits, no "pro" tier, no watermarks and no forced signup. Just a tool that works — today and always.</p>
+          </div>
+          <div class="art">💜</div>
+        </div>
+
+      </div>
+
+      <button class="slider-nav prev" id="slidePrev" aria-label="Previous slide">‹</button>
+      <button class="slider-nav next" id="slideNext" aria-label="Next slide">›</button>
+      <div class="slider-dots" id="slideDots"></div>
+    </div>
+  </section>
+
+  <!-- Converter -->
+  <section class="wrap" id="converter" style="padding-top:34px">
+    <div class="card converter">
+      <div class="tabs">
+        <button class="tab active" data-tab="image">🖼️ Image Converter</button>
+        <button class="tab" data-tab="doc">📄 Document Converter</button>
+        <button class="tab" data-tab="compress">🗜️ Compress Files (up to 1 GB)</button>
+      </div>
+
+      <div id="dropzone" class="dropzone" tabindex="0">
+        <div class="big">📁</div>
+        <h3>Drop files here or click to browse</h3>
+        <small id="acceptHint">Images: PNG · JPG · JPEG · WEBP · BMP · GIF</small>
+        <div><span class="limit-note" id="limitBadge">📦 Up to 1 GB per file</span></div>
+        <input type="file" id="fileInput" hidden multiple>
+      </div>
+
+      <div class="filelist" id="fileList"></div>
+
+      <div class="controls">
+        <div class="field" id="targetField">
+          <label for="targetFormat">Convert to</label>
+          <select id="targetFormat"><option value="">— add a file first —</option></select>
+        </div>
+
+        <div class="field" id="qualityField" hidden>
+          <label for="quality">Quality</label>
+          <input type="range" id="quality" min="0.1" max="1" step="0.05" value="0.92">
+        </div>
+
+        <!-- compression-only controls -->
+        <div class="field" id="compressLevelField" hidden>
+          <label for="compressLevel">Compression level</label>
+          <select id="compressLevel">
+            <option value="0.85">Light — best quality</option>
+            <option value="0.7" selected>Balanced — recommended</option>
+            <option value="0.5">Strong — much smaller</option>
+            <option value="0.35">Extreme — smallest possible</option>
+          </select>
+        </div>
+
+        <div class="field" id="maxDimField" hidden>
+          <label for="maxDim">Max image dimension</label>
+          <select id="maxDim">
+            <option value="0">Keep original size</option>
+            <option value="2560">2560 px</option>
+            <option value="1920">1920 px</option>
+            <option value="1280">1280 px</option>
+            <option value="800">800 px</option>
+          </select>
+        </div>
+
+        <div class="field" id="zipToggleField" hidden>
+          <label>Output</label>
+          <select id="zipMode">
+            <option value="auto">Auto (ZIP if 2+ files)</option>
+            <option value="zip">Always bundle into one ZIP</option>
+            <option value="separate">Keep files separate</option>
+          </select>
+        </div>
+
+        <button class="btn" id="convertBtn">Convert now</button>
+        <button class="btn ghost" id="clearBtn">Clear</button>
+      </div>
+
+      <div class="status" id="status" hidden><span class="spinner"></span><span id="statusText">Working…</span></div>
+      <div class="progressbar" id="progressWrap" hidden><i id="progressFill"></i></div>
+      <div class="results" id="results"></div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="block wrap" id="how">
+    <h2 style="text-align:center">How it works</h2>
+    <p style="text-align:center;color:var(--muted);max-width:620px;margin:0 auto 30px">
+      Three steps. Zero cost. Nothing to install.
+    </p>
+    <div class="grid3">
+      <div class="card info">
+        <div class="ic">1️⃣</div>
+        <h3>Add your file</h3>
+        <p>Drag &amp; drop or browse — up to 1 GB per file. Images and documents are read directly in your browser; nothing is uploaded to a server.</p>
+      </div>
+      <div class="card info">
+        <div class="ic">2️⃣</div>
+        <h3>Choose convert or compress</h3>
+        <p>Pick an output format — including <strong>Image → Word</strong> and <strong>PDF ⇄ Word</strong> — or switch to the Compress tab and choose Light → Extreme.</p>
+      </div>
+      <div class="card info">
+        <div class="ic">3️⃣</div>
+        <h3>Download instantly</h3>
+        <p>Your converted or compressed file is generated locally and downloaded straight away. No email, no account, no watermark, no payment.</p>
+      </div>
+    </div>
+
+    <div class="grid3" style="margin-top:18px">
+      <div class="card info"><div class="ic">🖼️</div><h3>Image formats</h3><p>PNG ↔ JPG ↔ WEBP ↔ BMP, any image → PDF, and any image → Word document (.docx). Batch several pictures into one Word file.</p></div>
+      <div class="card info"><div class="ic">🔁</div><h3>PDF ⇄ Word</h3><p>PDF → DOCX (editable Word) and DOCX → PDF. Plus DOCX → HTML and DOCX → TXT.</p></div>
+      <div class="card info"><div class="ic">🗜️</div><h3>Compression that works</h3><p>Images are re-encoded with smart quality + dimension control. PDFs are re-rendered. Any mix of files can be packed into one ZIP archive.</p></div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="block wrap" id="faq">
+    <h2 style="text-align:center">Frequently asked questions</h2>
+    <div style="max-width:780px;margin:26px auto 0">
+      <details open><summary>Is it really free forever?</summary><p>Yes. There is no payment system anywhere on this site — no checkout, no card fields, no subscription. Convert and compress as much as you like.</p></details>
+      <details><summary>Can I convert an image into a Word document?</summary><p>Yes. Open the <strong>Image Converter</strong> tab, add one or more pictures, and choose <strong>Word (DOCX)</strong> from the “Convert to” list. Each image is placed full-page in a real .docx file that opens in Microsoft Word, Google Docs, LibreOffice and Pages. Selecting several pictures packs them all into one document.</p></details>
+      <details><summary>Can I really convert PDF to Word?</summary><p>Yes. The PDF's text is extracted and packaged into a genuine .docx file that opens in Microsoft Word, Google Docs, LibreOffice and Pages. Complex layouts and scanned PDFs are simplified — for scanned PDFs convert to PNG or JPG instead.</p></details>
+      <details><summary>Can I really upload files up to 1 GB?</summary><p>Yes. The limit is 1 GB (1024 MB) per file. Very large files take longer and use more memory because everything runs locally in your browser. For files over ~300 MB, close other tabs for best results.</p></details>
+      <details><summary>How does compression work?</summary><p>Images are resized (if you want) and re-encoded as JPEG at a quality level you choose. PDFs are re-rendered page by page. Multiple files are bundled into a single ZIP using maximum DEFLATE compression. Nothing is uploaded — it all happens on your device.</p></details>
+      <details><summary>Are my files uploaded to a server?</summary><p>No. All conversion and compression happens inside your browser using JavaScript. Your files never leave your computer, which also makes it fast and private.</p></details>
+      <details><summary>Will my converted file have a watermark?</summary><p>Never. No watermarks, no branding burned into your output, no forced attribution.</p></details>
+      <details><summary>Do I need to create an account?</summary><p>No account is needed for anything. Only the administrator signs in, and that is just to view usage statistics.</p></details>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== ADMIN VIEW ===================== -->
+<section id="view-admin" hidden>
+  <div class="wrap">
+
+    <div id="adminLogin">
+      <div class="card login-card">
+        <h2>Admin sign in</h2>
+        <p class="sub">Restricted area — statistics &amp; settings only.</p>
+        <form id="loginForm">
+          <div class="field">
+            <label for="adminEmail">Email</label>
+            <input type="email" id="adminEmail" autocomplete="username" placeholder="admin@example.com" required>
+          </div>
+          <div class="field">
+            <label for="adminPass">Password</label>
+            <input type="password" id="adminPass" autocomplete="current-password" placeholder="••••••••" required>
+          </div>
+          <button class="btn" type="submit">Sign in</button>
+          <button class="btn ghost" type="button" data-go="main">← Back to converter</button>
+        </form>
+        <p class="hint" style="margin-top:18px">🔐 Demo credentials are stored in the browser. For a public production site, move authentication to a real server.</p>
+      </div>
+    </div>
+
+    <div id="adminDash" hidden>
+      <div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:22px">
+        <div>
+          <h2 style="margin:0">Admin dashboard</h2>
+          <p style="margin:0;color:var(--muted);font-size:.88rem">Signed in as <strong id="whoami"></strong></p>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn ghost sm" id="refreshBtn">↻ Refresh</button>
+          <button class="btn ghost sm" data-go="main">View site</button>
+          <button class="btn danger sm" id="logoutBtn">Sign out</button>
+        </div>
+      </div>
+
+      <div class="stats" id="statCards"></div>
+
+      <div class="card panel">
+        <h3>📊 Activity <span style="margin-left:auto;font-size:.78rem;color:var(--muted);font-weight:600" id="logCount"></span></h3>
+        <div class="tbl-wrap">
+          <table>
+            <thead>
+              <tr><th>Time</th><th>File</th><th>Type</th><th>Action</th><th>In</th><th>Out</th><th>Saved</th><th>Status</th></tr>
+            </thead>
+            <tbody id="logBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <h3>⚙️ Site settings</h3>
+        <div class="row">
+          <div class="field">
+            <label for="setMaxMB">Max file size (MB)</label>
+            <input type="number" id="setMaxMB" min="1" max="2048" step="1">
+          </div>
+          <div class="field">
+            <label for="setSiteName">Site name</label>
+            <input type="text" id="setSiteName">
+          </div>
+          <button class="btn sm" id="saveSettings">Save settings</button>
+        </div>
+        <div style="margin-top:16px">
+          <label style="font-size:.78rem;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.05em">Enabled file categories</label>
+          <div id="kindToggles" style="display:flex;flex-wrap:wrap;gap:18px;margin-top:8px"></div>
+        </div>
+        <div class="switch" style="margin-top:14px">
+          <input type="checkbox" id="setMaintenance">
+          <label for="setMaintenance">Maintenance mode (temporarily disable all conversions)</label>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <h3>🔑 Change admin password</h3>
+        <div class="row">
+          <div class="field"><label for="newPass">New password</label><input type="password" id="newPass" placeholder="New password"></div>
+          <div class="field"><label for="newPass2">Confirm</label><input type="password" id="newPass2" placeholder="Repeat password"></div>
+          <button class="btn sm" id="changePass">Update password</button>
+        </div>
+      </div>
+
+      <div class="card panel">
+        <h3>🧹 Data management</h3>
+        <div class="row">
+          <button class="btn ghost sm" id="exportLogs">⬇ Export logs (JSON)</button>
+          <button class="btn danger sm" id="clearLogs">Delete all logs</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER (PURPLE) ===================== -->
+<footer>
+  <div class="wrap">
+    <div>
+      <strong>FREE CONVERTER FOREVER</strong><br>
+      <span class="free">Free forever. No payment. No signup.</span>
+      <div class="flinks">
+        <button data-go="main">Converter</button>
+        <button data-scroll="how">How it works</button>
+        <button data-scroll="faq">FAQ</button>
+        <button data-go="admin">Admin</button>
+      </div>
+    </div>
+    <div style="text-align:right">
+      Images, PDFs, Word &amp; data files converted and compressed locally in your browser.<br>
+      © <span id="year"></span> FREE CONVERTER FOREVER
+    </div>
+  </div>
+</footer>
+
+<div id="toast"></div>
+
+<!-- ===================== LIBRARIES ===================== -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script>
+/* =========================================================
+   FREE CONVERTER FOREVER — application script
+   ========================================================= */
+(function () {
+'use strict';
+
+/* ---------------- tiny helpers ---------------- */
+const $  = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const escXml = s => String(s).replace(/[<>&'"]/g, c => ({'<':'&lt;','>':'&gt;','&':'&amp;',"'":'&apos;','"':'&quot;'}[c]));
+const fmtBytes = n => !n ? '0 B'
+  : n < 1024 ? n + ' B'
+  : n < 1048576 ? (n / 1024).toFixed(1) + ' KB'
+  : n < 1073741824 ? (n / 1048576).toFixed(2) + ' MB'
+  : (n / 1073741824).toFixed(2) + ' GB';
+const extOf = n => (String(n).split('.').pop() || '').toLowerCase();
+const baseName = n => String(n).replace(/\.[^.]+$/, '');
+const uid = () => (crypto.randomUUID ? crypto.randomUUID() : 'id-' + Date.now() + '-' + Math.random().toString(16).slice(2));
+const pct = (before, after) => !before ? 0 : Math.max(0, Math.round((1 - after / before) * 100));
+
+function toast(msg, type) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.className = 'show' + (type ? ' ' + type : '');
+  clearTimeout(toast._t);
+  toast._t = setTimeout(() => { t.className = ''; }, 3800);
+}
+
+/* ---------------- storage layer ---------------- */
+const LS = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+};
+
+const DEFAULT_ADMIN = { email: 'omwakasyuka@gmail.com', password: 'mamagugu' };
+const DEFAULT_SETTINGS = {
+  maxMB: 1024,
+  siteName: 'FREE CONVERTER FOREVER',
+  maintenance: false,
+  enabled: { image: true, pdf: true, docx: true, sheet: true, csv: true, txt: true, json: true }
+};
+
+let adminCreds = LS.get('fcf_admin', null) || { ...DEFAULT_ADMIN };
+let settings   = Object.assign({}, DEFAULT_SETTINGS, LS.get('fcf_settings', {}));
+settings.enabled = Object.assign({}, DEFAULT_SETTINGS.enabled, settings.enabled || {});
+
+const getLogs = () => LS.get('fcf_logs', []);
+function pushLog(entry) {
+  const logs = getLogs();
+  logs.unshift(Object.assign({ id: uid(), at: new Date().toISOString() }, entry));
+  LS.set('fcf_logs', logs.slice(0, 500));
+}
+
+/* ---------------- format knowledge base ---------------- */
+const EXT_KIND = {
+  png:'image', jpg:'image', jpeg:'image', webp:'image', bmp:'image', gif:'image',
+  pdf:'pdf', docx:'docx', xlsx:'sheet', xls:'sheet', csv:'csv', txt:'txt', json:'json',
+  zip:'zip'
+};
+
+const TARGETS = {
+  image: ['png', 'jpeg', 'webp', 'bmp', 'docx', 'pdf'],   // ← image → Word added
+  pdf:   ['docx', 'png', 'jpeg', 'txt'],
+  docx:  ['pdf', 'html', 'txt'],
+  sheet: ['csv', 'json', 'html', 'txt', 'pdf', 'xlsx'],
+  csv:   ['xlsx', 'json', 'html', 'pdf'],
+  txt:   ['pdf'],
+  json:  ['csv']
+};
+
+const MIME = {
+  png:'image/png', jpeg:'image/jpeg', webp:'image/webp', bmp:'image/bmp',
+  pdf:'application/pdf', txt:'text/plain;charset=utf-8', html:'text/html;charset=utf-8',
+  csv:'text/csv;charset=utf-8', json:'application/json;charset=utf-8',
+  xlsx:'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+  docx:'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  zip:'application/zip'
+};
+
+const LABEL = { png:'PNG', jpeg:'JPG', webp:'WEBP', bmp:'BMP', pdf:'PDF', txt:'TXT',
+                html:'HTML', csv:'CSV', json:'JSON', xlsx:'XLSX', docx:'Word (DOCX)' };
+
+const ACCEPT = {
+  image:    '.png,.jpg,.jpeg,.webp,.bmp,.gif',
+  doc:      '.pdf,.docx,.xlsx,.xls,.csv,.txt,.json',
+  compress: '.png,.jpg,.jpeg,.webp,.bmp,.gif,.pdf,.docx,.xlsx,.xls,.csv,.txt,.json'
+};
+
+/* ---------------- app state ---------------- */
+const state = { tab: 'image', files: [], results: [] };
+
+/* =========================================================
+   VIEW ROUTING
+   ========================================================= */
+function showView(name) {
+  $('#view-main').hidden  = (name === 'admin');
+  $('#view-admin').hidden = (name !== 'admin');
+  if (name === 'admin') renderAdmin();
+  window.scrollTo({ top: 0, behavior: 'auto' });
+}
+
+$$('[data-go]').forEach(b => b.addEventListener('click', e => {
+  e.preventDefault();
+  showView(b.dataset.go);
+}));
+$$('[data-scroll]').forEach(b => b.addEventListener('click', () => {
+  showView('main');
+  requestAnimationFrame(() => {
+    const el = document.getElementById(b.dataset.scroll);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}));
+
+/* =========================================================
+   SLIDING IMAGES (carousel)
+   ========================================================= */
+(function initSlider() {
+  const slider = $('#slider');
+  const track  = $('#slideTrack');
+  const dotsWrap = $('#slideDots');
+  if (!slider || !track) return;
+
+  const total = track.children.length;
+  let idx = 0, timer = null;
+
+  for (let i = 0; i < total; i++) {
+    const d = document.createElement('button');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.type = 'button';
+    d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+    d.addEventListener('click', () => { go(i); restart(); });
+    dotsWrap.appendChild(d);
+  }
+
+  function go(i) {
+    idx = (i + total) % total;
+    track.style.transform = 'translateX(-' + (idx * 100) + '%)';
+    Array.from(dotsWrap.children).forEach((d, k) => d.classList.toggle('active', k === idx));
+  }
+  const next = () => go(idx + 1);
+  const prev = () => go(idx - 1);
+  const start = () => { timer = setInterval(next, 4500); };
+  const stop  = () => { clearInterval(timer); };
+  const restart = () => { stop(); start(); };
+
+  $('#slideNext').addEventListener('click', () => { next(); restart(); });
+  $('#slidePrev').addEventListener('click', () => { prev(); restart(); });
+
+  slider.addEventListener('mouseenter', stop);
+  slider.addEventListener('mouseleave', start);
+  slider.addEventListener('focusin', stop);
+  slider.addEventListener('focusout', start);
+
+  let x0 = null;
+  slider.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; stop(); }, { passive: true });
+  slider.addEventListener('touchend', e => {
+    if (x0 === null) return;
+    const dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 45) { dx < 0 ? next() : prev(); }
+    x0 = null; start();
+  });
+
+  document.addEventListener('keydown', e => {
+    if ($('#view-main').hidden) return;
+    if (e.key === 'ArrowRight') { next(); restart(); }
+    if (e.key === 'ArrowLeft')  { prev(); restart(); }
+  });
+
+  start();
+})();
+
+/* =========================================================
+   CONVERTER — UI
+   ========================================================= */
+const dropzone   = $('#dropzone');
+const fileInput  = $('#fileInput');
+const fileListEl = $('#fileList');
+const targetSel  = $('#targetFormat');
+const convertBtn = $('#convertBtn');
+const statusEl   = $('#status');
+const statusText = $('#statusText');
+const resultsEl  = $('#results');
+const qualityField = $('#qualityField');
+const progressWrap = $('#progressWrap');
+const progressFill = $('#progressFill');
+
+const targetField      = $('#targetField');
+const compressLevelField = $('#compressLevelField');
+const maxDimField      = $('#maxDimField');
+const zipToggleField   = $('#zipToggleField');
+
+function setTabUI() {
+  const t = state.tab;
+  targetField.hidden        = (t === 'compress');
+  qualityField.hidden       = !(t !== 'compress' && (targetSel.value === 'jpeg' || targetSel.value === 'webp'));
+  compressLevelField.hidden = (t !== 'compress');
+  maxDimField.hidden        = (t !== 'compress');
+  zipToggleField.hidden     = (t !== 'compress');
+
+  const hint = $('#acceptHint');
+  if (t === 'image') {
+    hint.textContent = 'Images: PNG · JPG · JPEG · WEBP · BMP · GIF';
+    fileInput.setAttribute('accept', ACCEPT.image);
+  } else if (t === 'doc') {
+    hint.textContent = 'Documents: PDF · Word (DOCX) · XLSX · XLS · CSV · TXT · JSON';
+    fileInput.setAttribute('accept', ACCEPT.doc);
+  } else {
+    hint.textContent = 'Any file type: images, PDF, Word, Excel, CSV, TXT, JSON — up to 1 GB each';
+    fileInput.setAttribute('accept', ACCEPT.compress);
+  }
+  updateLimitBadge();
+}
+
+function updateLimitBadge() {
+  const b = $('#limitBadge');
+  if (!b) return;
+  b.textContent = `📦 Up to ${settings.maxMB >= 1024 ? (settings.maxMB / 1024).toFixed(settings.maxMB % 1024 ? 1 : 0) + ' GB' : settings.maxMB + ' MB'} per file`;
+}
+
+$$('.tab').forEach(tab => tab.addEventListener('click', () => {
+  $$('.tab').forEach(t => t.classList.remove('active'));
+  tab.classList.add('active');
+  state.tab = tab.dataset.tab;
+  clearAll();
+  setTabUI();
+}));
+
+dropzone.addEventListener('click', () => fileInput.click());
+dropzone.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); fileInput.click(); } });
+fileInput.addEventListener('change', e => { addFiles(Array.from(e.target.files)); fileInput.value = ''; });
+
+['dragenter', 'dragover'].forEach(ev => dropzone.addEventListener(ev, e => {
+  e.preventDefault(); dropzone.classList.add('drag');
+}));
+['dragleave', 'drop'].forEach(ev => dropzone.addEventListener(ev, e => {
+  e.preventDefault(); dropzone.classList.remove('drag');
+}));
+dropzone.addEventListener('drop', e => {
+  if (e.dataTransfer && e.dataTransfer.files) addFiles(Array.from(e.dataTransfer.files));
+});
+
+function addFiles(files) {
+  if (!files.length) return;
+
+  if (settings.maintenance) {
+    toast('The converter is temporarily in maintenance mode.', 'warn');
+    return;
+  }
+
+  const maxBytes = settings.maxMB * 1024 * 1024;
+  const accepted = [];
+
+  for (const f of files) {
+    const kind = EXT_KIND[extOf(f.name)];
+    if (!kind) { toast(`"${f.name}" — unsupported file type.`, 'error'); continue; }
+    if (kind !== 'zip' && !settings.enabled[kind]) { toast(`"${f.name}" — this category is currently disabled.`, 'warn'); continue; }
+    if (f.size > maxBytes) { toast(`"${f.name}" is larger than ${fmtBytes(maxBytes)}.`, 'error'); continue; }
+
+    if (state.tab === 'image' && kind !== 'image') {
+      toast(`"${f.name}" is not an image — switch to the Document tab.`, 'warn');
+      continue;
+    }
+    if (state.tab === 'doc' && kind === 'image') {
+      toast(`"${f.name}" is an image — switch to the Image tab.`, 'warn');
+      continue;
+    }
+    accepted.push(f);
+  }
+
+  if (!accepted.length) return;
+
+  if (state.tab === 'compress') {
+    state.files = state.files.concat(accepted);
+    const totalBytes = state.files.reduce((a, f) => a + f.size, 0);
+    if (totalBytes > 1024 * 1024 * 1024) {
+      toast('Batch is over 1 GB total — operations may be slow on low-memory devices.', 'warn');
+    }
+  } else {
+    const firstKind = EXT_KIND[extOf(accepted[0].name)];
+    const filtered = accepted.filter(f => {
+      const k = EXT_KIND[extOf(f.name)];
+      if (k !== firstKind) { toast(`"${f.name}" skipped — mixed file types in one batch.`, 'warn'); return false; }
+      return true;
+    });
+    if (firstKind !== 'image') {
+      state.files = [filtered[0]];
+    } else {
+      state.files = state.files.concat(filtered);
+    }
+  }
+
+  renderFileList();
+  renderTargets();
+  clearResults();
+}
+
+function renderFileList() {
+  fileListEl.innerHTML = '';
+  state.files.forEach((f, i) => {
+    const icon = state.tab === 'compress' ? '🗜️' : (state.tab === 'image' ? '🖼️' : '📄');
+    const chip = document.createElement('div');
+    chip.className = 'filechip';
+    chip.innerHTML =
+      `<span>${icon}</span>
+       <span class="nm">${esc(f.name)}</span>
+       <span class="sz">${fmtBytes(f.size)}</span>
+       <button title="Remove" data-i="${i}">×</button>`;
+    chip.querySelector('button').addEventListener('click', () => {
+      state.files.splice(i, 1);
+      renderFileList(); renderTargets(); clearResults();
+    });
+    fileListEl.appendChild(chip);
+  });
+}
+
+function renderTargets() {
+  targetSel.innerHTML = '';
+  if (!state.files.length) {
+    targetSel.innerHTML = '<option value="">— add a file first —</option>';
+    return;
+  }
+  const kind = EXT_KIND[extOf(state.files[0].name)];
+  const opts = TARGETS[kind] || [];
+  opts.forEach(t => {
+    const o = document.createElement('option');
+    o.value = t; o.textContent = LABEL[t] || t.toUpperCase();
+    targetSel.appendChild(o);
+  });
+  const src = extOf(state.files[0].name);
+  const diff = opts.find(o => o !== src && !(src === 'jpg' && o === 'jpeg'));
+  if (diff) targetSel.value = diff;
+}
+
+targetSel.addEventListener('change', () => {
+  qualityField.hidden = !(targetSel.value === 'jpeg' || targetSel.value === 'webp');
+});
+
+$('#clearBtn').addEventListener('click', () => { clearAll(); });
+function clearAll() {
+  state.files = [];
+  fileListEl.innerHTML = '';
+  renderTargets();
+  clearResults();
+  statusEl.hidden = true;
+  progressWrap.hidden = true;
+}
+function clearResults() {
+  state.results.forEach(r => { if (r.url) URL.revokeObjectURL(r.url); });
+  state.results = [];
+  resultsEl.innerHTML = '';
+}
+
+/* =========================================================
+   CONVERSION ENGINE
+   ========================================================= */
+
+function loadImage(file) {
+  return new Promise((resolve, reject) => {
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => { URL.revokeObjectURL(url); resolve(img); };
+    img.onerror = () => { URL.revokeObjectURL(url); reject(new Error('Could not read image')); };
+    img.src = url;
+  });
+}
+function fileToText(file) {
+  return new Promise((res, rej) => {
+    const r = new FileReader();
+    r.onload = () => res(r.result);
+    r.onerror = () => rej(new Error('Could not read file'));
+    r.readAsText(file);
+  });
+}
+
+/* --- BMP encoder --- */
+function encodeBMP(imageData) {
+  const w = imageData.width, h = imageData.height, data = imageData.data;
+  const rowSize = Math.floor((24 * w + 31) / 32) * 4;
+  const pixelBytes = rowSize * h;
+  const fileSize = 54 + pixelBytes;
+  const buf = new ArrayBuffer(fileSize);
+  const view = new DataView(buf);
+  const u8 = new Uint8Array(buf);
+
+  view.setUint8(0, 0x42); view.setUint8(1, 0x4D);
+  view.setUint32(2, fileSize, true);
+  view.setUint32(10, 54, true);
+  view.setUint32(14, 40, true);
+  view.setInt32(18, w, true);
+  view.setInt32(22, h, true);
+  view.setUint16(26, 1, true);
+  view.setUint16(28, 24, true);
+  view.setUint32(34, pixelBytes, true);
+
+  for (let y = 0; y < h; y++) {
+    const srcY = h - 1 - y;
+    let off = 54 + y * rowSize;
+    for (let x = 0; x < w; x++) {
+      const i = (srcY * w + x) * 4;
+      u8[off++] = data[i + 2];
+      u8[off++] = data[i + 1];
+      u8[off++] = data[i];
+    }
+  }
+  return new Blob([buf], { type: 'image/bmp' });
+}
+
+/* --- images --- */
+async function convertImages(files, target, quality) {
+  const out = [];
+  for (const file of files) {
+    const img = await loadImage(file);
+    const canvas = document.createElement('canvas');
+    canvas.width = img.naturalWidth || img.width;
+    canvas.height = img.naturalHeight || img.height;
+    const ctx = canvas.getContext('2d');
+
+    if (target === 'jpeg' || target === 'bmp') {
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+    }
+    ctx.drawImage(img, 0, 0);
+
+    let blob;
+    if (target === 'bmp') {
+      blob = encodeBMP(ctx.getImageData(0, 0, canvas.width, canvas.height));
+    } else {
+      blob = await new Promise((res, rej) =>
+        canvas.toBlob(b => b ? res(b) : rej(new Error('Encoder not supported in this browser')), MIME[target], quality)
+      );
+    }
+    out.push({ name: `${baseName(file.name)}.${target === 'jpeg' ? 'jpg' : target}`, blob });
+  }
+  return out;
+}
+
+async function imagesToPdf(files) {
+  const { jsPDF } = window.jspdf;
+  let pdf = null;
+
+  for (const file of files) {
+    const img = await loadImage(file);
+    const w = img.naturalWidth || img.width;
+    const h = img.naturalHeight || img.height;
+    const orientation = w > h ? 'landscape' : 'portrait';
+
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    const dataUrl = canvas.toDataURL('image/jpeg', 0.92);
+
+    if (!pdf) {
+      pdf = new jsPDF({ orientation, unit: 'px', format: [w, h], hotfixes: ['px_scaling'] });
+    } else {
+      pdf.addPage([w, h], orientation);
+    }
+    pdf.addImage(dataUrl, 'JPEG', 0, 0, w, h, undefined, 'FAST');
+  }
+
+  if (!pdf) throw new Error('No images to convert');
+  const name = files.length === 1 ? `${baseName(files[0].name)}.pdf` : 'converted-images.pdf';
+  return [{ name, blob: pdf.output('blob') }];
+}
+
+/* =========================================================
+   IMAGE → WORD (DOCX)  — real OOXML with embedded pictures
+   ========================================================= */
+async function imageToDocx(files) {
+  if (!window.JSZip) throw new Error('DOCX engine failed to load');
+
+  const EMU = 9525;                 // 1 px @96dpi
+  const MAX_CX = 5943600;           // 6.5 in — page width minus margins
+  const MAX_CY = 8229600;           // 9 in — page height minus margins
+
+  const zip = new JSZip();
+  const media = zip.folder('word/media');
+  const imageRels = [];
+  const body = [];
+  const exts = new Set();
+
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    const img = await loadImage(file);
+    const w = img.naturalWidth || img.width;
+    const h = img.naturalHeight || img.height;
+
+    // Keep alpha-capable formats lossless, everything else as JPEG
+    const srcExt = extOf(file.name);
+    const usePng = ['png', 'gif', 'bmp', 'webp'].includes(srcExt);
+    const ext  = usePng ? 'png' : 'jpeg';
+    const mime = usePng ? 'image/png' : 'image/jpeg';
+
+    const canvas = document.createElement('canvas');
+    canvas.width = w; canvas.height = h;
+    const ctx = canvas.getContext('2d');
+    if (!usePng) { ctx.fillStyle = '#ffffff'; ctx.fillRect(0, 0, w, h); }
+    ctx.drawImage(img, 0, 0);
+
+    const blob = await new Promise((res, rej) =>
+      canvas.toBlob(b => b ? res(b) : rej(new Error('Could not encode image')), mime, 0.92)
+    );
+
+    const fname = `image${i + 1}.${ext}`;
+    media.file(fname, blob);
+    exts.add(ext);
+
+    const rid = `rIdImg${i + 1}`;
+    imageRels.push(
+      `<Relationship Id="${rid}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/${fname}"/>`
+    );
+
+    // Scale to fit inside the page while preserving aspect ratio
+    let cx = w * EMU, cy = h * EMU;
+    const s = Math.min(1, MAX_CX / cx, MAX_CY / cy);
+    cx = Math.round(cx * s);
+    cy = Math.round(cy * s);
+
+    const picId = i + 1;
+    body.push(
+      `<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="0" w:after="200"/></w:pPr><w:r><w:drawing>` +
+        `<wp:inline distT="0" distB="0" distL="0" distR="0">` +
+          `<wp:extent cx="${cx}" cy="${cy}"/>` +
+          `<wp:docPr id="${picId}" name="Picture ${picId}"/>` +
+          `<a:graphic><a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">` +
+            `<pic:pic>` +
+              `<pic:nvPicPr><pic:cNvPr id="${picId}" name="${fname}"/><pic:cNvPicPr/></pic:nvPicPr>` +
+              `<pic:blipFill><a:blip r:embed="${rid}"/><a:stretch><a:fillRect/></a:stretch></pic:blipFill>` +
+              `<pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="${cx}" cy="${cy}"/></a:xfrm>` +
+              `<a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr>` +
+            `</pic:pic>` +
+          `</a:graphicData></a:graphic>` +
+        `</wp:inline></w:drawing></w:r></w:p>`
+    );
+
+    if (i < files.length - 1) body.push('<w:p><w:r><w:br w:type="page"/></w:r></w:p>');
+  }
+
+  /* --- content types --- */
+  const defaults = Array.from(exts).map(e =>
+    `<Default Extension="${e}" ContentType="${e === 'png' ? 'image/png' : 'image/jpeg'}"/>`
+  ).join('');
+
+  zip.file('[Content_Types].xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+<Default Extension="xml" ContentType="application/xml"/>
+${defaults}
+<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>
+<Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>
+</Types>`);
+
+  /* --- package relationships --- */
+  zip.folder('_rels').file('.rels',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
+<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
+</Relationships>`);
+
+  /* --- document relationships (the images) --- */
+  zip.folder('word').folder('_rels').file('document.xml.rels',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+${imageRels.join('\n')}
+</Relationships>`);
+
+  /* --- the document body --- */
+  zip.folder('word').file('document.xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document
+  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+  xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"
+  xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<w:body>
+${body.join('\n')}
+<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/></w:sectPr>
+</w:body></w:document>`);
+
+  /* --- properties --- */
+  const title = files.length === 1 ? baseName(files[0].name) : 'Images';
+  zip.folder('docProps').file('core.xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
+ xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dc:title>${escXml(title)}</dc:title>
+<dc:creator>FREE CONVERTER FOREVER</dc:creator>
+<cp:lastModifiedBy>FREE CONVERTER FOREVER</cp:lastModifiedBy>
+<dcterms:created xsi:type="dcterms:W3CDTF">${new Date().toISOString()}</dcterms:created>
+</cp:coreProperties>`);
+
+  zip.folder('docProps').file('app.xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+<Application>FREE CONVERTER FOREVER</Application>
+</Properties>`);
+
+  const blob = await zip.generateAsync({
+    type: 'blob',
+    mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    compression: 'DEFLATE'
+  });
+
+  const name = files.length === 1 ? `${baseName(files[0].name)}.docx` : 'images.docx';
+  return [{ name, blob }];
+}
+
+/* --- PDF --- */
+function pdfjsReady() {
+  if (!window.pdfjsLib) throw new Error('PDF engine failed to load');
+  window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+    'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+  return window.pdfjsLib;
+}
+
+async function pdfToImages(file, target) {
+  const pdfjsLib = pdfjsReady();
+  const data = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data }).promise;
+  const out = [];
+  const mime = target === 'png' ? 'image/png' : 'image/jpeg';
+  const scale = 2;
+
+  for (let p = 1; p <= pdf.numPages; p++) {
+    const page = await pdf.getPage(p);
+    const viewport = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.floor(viewport.width);
+    canvas.height = Math.floor(viewport.height);
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    await page.render({ canvasContext: ctx, viewport }).promise;
+
+    const blob = await new Promise((res, rej) =>
+      canvas.toBlob(b => b ? res(b) : rej(new Error('Render failed')), mime, 0.92)
+    );
+    out.push({ name: `${baseName(file.name)}-page-${p}.${target === 'png' ? 'png' : 'jpg'}`, blob });
+  }
+  return out;
+}
+
+async function pdfToText(file) {
+  const pdfjsLib = pdfjsReady();
+  const data = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data }).promise;
+  let text = '';
+  for (let p = 1; p <= pdf.numPages; p++) {
+    const page = await pdf.getPage(p);
+    const content = await page.getTextContent();
+    let last = null, line = '';
+    const lines = [];
+    for (const item of content.items) {
+      if (last !== null && Math.abs(item.transform[5] - last) > 2) { lines.push(line.trim()); line = ''; }
+      line += item.str + ' ';
+      last = item.transform[5];
+    }
+    if (line.trim()) lines.push(line.trim());
+    text += `--- Page ${p} ---\n${lines.join('\n')}\n\n`;
+  }
+  return text.trim() || '(No selectable text found — this PDF is probably a scan. Try PDF → PNG/JPG.)';
+}
+
+/* --- PDF → WORD (DOCX) --- */
+async function pdfToDocx(file) {
+  if (!window.JSZip) throw new Error('DOCX engine failed to load');
+
+  const text = await pdfToText(file);
+  const base = baseName(file.name);
+
+  const paragraphs = text.split('\n').map(raw => {
+    const line = raw.replace(/\s+$/, '');
+    const isHeading = /^---\s*Page\s+\d+\s*---$/i.test(line.trim());
+    const bold = isHeading ? '<w:rPr><w:b/><w:sz w:val="26"/></w:rPr>' : '';
+    const spacing = isHeading
+      ? '<w:pPr><w:spacing w:before="240" w:after="120"/></w:pPr>'
+      : '<w:pPr><w:spacing w:after="80"/></w:pPr>';
+    return `<w:p>${spacing}<w:r>${bold}<w:t xml:space="preserve">${escXml(line || ' ')}</w:t></w:r></w:p>`;
+  }).join('');
+
+  const zip = new JSZip();
+
+  zip.file('[Content_Types].xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+<Default Extension="xml" ContentType="application/xml"/>
+<Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+<Override PartName="/docProps/core.xml" ContentType="application/vnd.openxmlformats-package.core-properties+xml"/>
+<Override PartName="/docProps/app.xml" ContentType="application/vnd.openxmlformats-officedocument.extended-properties+xml"/>
+</Types>`);
+
+  zip.folder('_rels').file('.rels',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/>
+<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/package/2006/relationships/metadata/core-properties" Target="docProps/core.xml"/>
+<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/extended-properties" Target="docProps/app.xml"/>
+</Relationships>`);
+
+  zip.folder('word').file('document.xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+<w:body>${paragraphs}
+<w:sectPr><w:pgSz w:w="12240" w:h="15840"/><w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440"/></w:sectPr>
+</w:body></w:document>`);
+
+  zip.folder('docProps').file('core.xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
+ xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<dc:title>${escXml(base)}</dc:title>
+<dc:creator>FREE CONVERTER FOREVER</dc:creator>
+<cp:lastModifiedBy>FREE CONVERTER FOREVER</cp:lastModifiedBy>
+<dcterms:created xsi:type="dcterms:W3CDTF">${new Date().toISOString()}</dcterms:created>
+</cp:coreProperties>`);
+
+  zip.folder('docProps').file('app.xml',
+`<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+<Application>FREE CONVERTER FOREVER</Application>
+</Properties>`);
+
+  const blob = await zip.generateAsync({
+    type: 'blob',
+    mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    compression: 'DEFLATE'
+  });
+
+  return [{ name: `${base}.docx`, blob }];
+}
+
+/* --- text → PDF --- */
+function textToPdf(text, title) {
+  const { jsPDF } = window.jspdf;
+  const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+  const margin = 48;
+  const pageW = doc.internal.pageSize.getWidth();
+  const pageH = doc.internal.pageSize.getHeight();
+  const maxW = pageW - margin * 2;
+  const lineH = 15;
+  let y = margin;
+
+  if (title) {
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(15);
+    doc.text(doc.splitTextToSize(title, maxW), margin, y);
+    y += lineH * 1.8;
+  }
+
+  doc.setFont('helvetica', 'normal');
+  doc.setFontSize(11);
+
+  const blocks = String(text).split('\n');
+  for (const block of blocks) {
+    const wrapped = doc.splitTextToSize(block || ' ', maxW);
+    for (const line of wrapped) {
+      if (y > pageH - margin) { doc.addPage(); y = margin; }
+      doc.text(line, margin, y);
+      y += lineH;
+    }
+  }
+  return doc.output('blob');
+}
+
+/* --- DOCX (Word) --- */
+async function docxConvert(file, target) {
+  if (!window.mammoth) throw new Error('DOCX engine failed to load');
+  const arrayBuffer = await file.arrayBuffer();
+  const base = baseName(file.name);
+
+  if (target === 'html') {
+    const res = await mammoth.convertToHtml({ arrayBuffer });
+    const html = `<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>${esc(base)}</title>
+<style>body{font-family:Georgia,serif;max-width:800px;margin:48px auto;padding:0 20px;line-height:1.7;color:#111}
+img{max-width:100%}table{border-collapse:collapse}td,th{border:1px solid #ccc;padding:6px 10px}</style>
+</head><body>${res.value}</body></html>`;
+    return [{ name: `${base}.html`, blob: new Blob([html], { type: MIME.html }) }];
+  }
+
+  const raw = await mammoth.extractRawText({ arrayBuffer });
+  const text = raw.value || '(empty document)';
+
+  if (target === 'txt') return [{ name: `${base}.txt`, blob: new Blob([text], { type: MIME.txt }) }];
+  if (target === 'pdf') return [{ name: `${base}.pdf`, blob: textToPdf(text, base) }];
+  throw new Error('Unsupported DOCX target');
+}
+
+/* --- spreadsheets --- */
+async function sheetConvert(file, target) {
+  const ext = extOf(file.name);
+  let wb;
+
+  if (ext === 'csv') {
+    const text = await fileToText(file);
+    wb = XLSX.read(text, { type: 'string' });
+  } else {
+    wb = XLSX.read(await file.arrayBuffer(), { type: 'array' });
+  }
+
+  const base = baseName(file.name);
+  const firstSheet = wb.SheetNames[0];
+  const ws = wb.Sheets[firstSheet];
+
+  switch (target) {
+    case 'csv': {
+      let csv = '';
+      wb.SheetNames.forEach(n => {
+        if (wb.SheetNames.length > 1) csv += `# Sheet: ${n}\n`;
+        csv += XLSX.utils.sheet_to_csv(wb.Sheets[n]) + '\n';
+      });
+      return [{ name: `${base}.csv`, blob: new Blob([csv], { type: MIME.csv }) }];
+    }
+    case 'json': {
+      const json = JSON.stringify(XLSX.utils.sheet_to_json(ws, { defval: '' }), null, 2);
+      return [{ name: `${base}.json`, blob: new Blob([json], { type: MIME.json }) }];
+    }
+    case 'html': {
+      let html = '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' + esc(base) +
+        '</title><style>body{font-family:system-ui,sans-serif;padding:24px}table{border-collapse:collapse;width:100%}' +
+        'td,th{border:1px solid #ddd;padding:7px 10px;font-size:14px}th{background:#EDE9FE}</style></head><body>';
+      wb.SheetNames.forEach(n => {
+        html += `<h2>${esc(n)}</h2>` + XLSX.utils.sheet_to_html(wb.Sheets[n]);
+      });
+      html += '</body></html>';
+      return [{ name: `${base}.html`, blob: new Blob([html], { type: MIME.html }) }];
+    }
+    case 'txt': {
+      const txt = XLSX.utils.sheet_to_csv(ws, { FS: '\t' });
+      return [{ name: `${base}.txt`, blob: new Blob([txt], { type: MIME.txt }) }];
+    }
+    case 'pdf': {
+      const txt = XLSX.utils.sheet_to_csv(ws);
+      return [{ name: `${base}.pdf`, blob: textToPdf(txt, base) }];
+    }
+    case 'xlsx': {
+      const out = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+      return [{ name: `${base}.xlsx`, blob: new Blob([out], { type: MIME.xlsx }) }];
+    }
+    default:
+      throw new Error('Unsupported spreadsheet target');
+  }
+}
+
+/* --- JSON → CSV --- */
+async function jsonToCsv(file) {
+  const text = await fileToText(file);
+  let parsed;
+  try { parsed = JSON.parse(text); } catch { throw new Error('Invalid JSON file'); }
+  const rows = Array.isArray(parsed) ? parsed : [parsed];
+  if (!rows.length) throw new Error('JSON contains no records');
+  const ws = XLSX.utils.json_to_sheet(rows);
+  const csv = XLSX.utils.sheet_to_csv(ws);
+  return [{ name: `${baseName(file.name)}.csv`, blob: new Blob([csv], { type: MIME.csv }) }];
+}
+
+/* --- plain text --- */
+async function txtConvert(file, target) {
+  const text = await fileToText(file);
+  const base = baseName(file.name);
+  if (target === 'pdf') return [{ name: `${base}.pdf`, blob: textToPdf(text, base) }];
+  throw new Error('Unsupported text target');
+}
+
+/* =========================================================
+   COMPRESSION ENGINE (up to 1 GB)
+   ========================================================= */
+function setProgress(done, total) {
+  if (total <= 1) { progressWrap.hidden = true; return; }
+  progressWrap.hidden = false;
+  progressFill.style.width = Math.round((done / total) * 100) + '%';
+}
+
+async function compressImage(file, quality, maxDim) {
+  const img = await loadImage(file);
+  let w = img.naturalWidth || img.width;
+  let h = img.naturalHeight || img.height;
+
+  if (maxDim && Math.max(w, h) > maxDim) {
+    const s = maxDim / Math.max(w, h);
+    w = Math.max(1, Math.round(w * s));
+    h = Math.max(1, Math.round(h * s));
+  }
+
+  const canvas = document.createElement('canvas');
+  canvas.width = w;
+  canvas.height = h;
+  const ctx = canvas.getContext('2d', { alpha: false });
+  ctx.fillStyle = '#ffffff';
+  ctx.fillRect(0, 0, w, h);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(img, 0, 0, w, h);
+
+  const blob = await new Promise((res, rej) =>
+    canvas.toBlob(b => b ? res(b) : rej(new Error('Encoder unavailable')), 'image/jpeg', quality)
+  );
+
+  const chosen = (blob && blob.size < file.size) ? blob : file;
+  const name = (chosen === blob) ? `${baseName(file.name)}-compressed.jpg` : file.name;
+  return { name, blob: chosen };
+}
+
+async function compressPdf(file, quality) {
+  const pdfjsLib = pdfjsReady();
+  const data = await file.arrayBuffer();
+  const pdf = await pdfjsLib.getDocument({ data }).promise;
+  const { jsPDF } = window.jspdf;
+
+  const scale = quality <= 0.4 ? 1.0 : quality <= 0.6 ? 1.2 : 1.5;
+
+  let out = null;
+  for (let p = 1; p <= pdf.numPages; p++) {
+    const page = await pdf.getPage(p);
+    const vp = page.getViewport({ scale });
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.floor(vp.width);
+    canvas.height = Math.floor(vp.height);
+    const ctx = canvas.getContext('2d', { alpha: false });
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    await page.render({ canvasContext: ctx, viewport: vp }).promise;
+
+    const dataUrl = canvas.toDataURL('image/jpeg', Math.max(0.3, quality));
+    const orientation = vp.width > vp.height ? 'landscape' : 'portrait';
+    const fmt = [vp.width, vp.height];
+
+    if (!out) {
+      out = new jsPDF({ orientation, unit: 'pt', format: fmt });
+    } else {
+      out.addPage(fmt, orientation);
+    }
+    out.addImage(dataUrl, 'JPEG', 0, 0, vp.width, vp.height, undefined, 'FAST');
+  }
+
+  if (!out) throw new Error('Could not read PDF');
+  const blob = out.output('blob');
+  const chosen = (blob.size < file.size) ? blob : file;
+  const name = (chosen === blob) ? `${baseName(file.name)}-compressed.pdf` : file.name;
+  return { name, blob: chosen };
+}
+
+async function zipAll(items, zipName) {
+  if (!window.JSZip) throw new Error('ZIP engine failed to load');
+  const zip = new JSZip();
+  const used = Object.create(null);
+  items.forEach(it => {
+    let name = it.name;
+    if (used[name]) {
+      const dot = name.lastIndexOf('.');
+      const stem = dot > 0 ? name.slice(0, dot) : name;
+      const ext = dot > 0 ? name.slice(dot) : '';
+      name = `${stem}-${used[it.name]}${ext}`;
+    }
+    used[it.name] = (used[it.name] || 0) + 1;
+    zip.file(name, it.blob);
+  });
+  const blob = await zip.generateAsync(
+    { type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 9 } },
+    meta => setProgress(Math.round((meta.percent || 0)), 100)
+  );
+  return { name: zipName, blob };
+}
+
+async function compressBatch(files, quality, maxDim, zipMode) {
+  const out = [];
+  const total = files.length;
+
+  for (let i = 0; i < files.length; i++) {
+    const f = files[i];
+    const kind = EXT_KIND[extOf(f.name)];
+    let item = null;
+
+    try {
+      if (kind === 'image') {
+        item = await compressImage(f, quality, maxDim);
+      } else if (kind === 'pdf') {
+        item = await compressPdf(f, quality);
+      } else {
+        item = { name: f.name, blob: f };
+      }
+    } catch (err) {
+      console.warn('Compression failed for', f.name, err);
+      item = { name: f.name, blob: f };
+    }
+
+    out.push(Object.assign(item, {
+      originalSize: f.size,
+      originalName: f.name
+    }));
+
+    setProgress(i + 1, total);
+  }
+
+  const forceZip = zipMode === 'zip' || (zipMode === 'auto' && out.length > 1);
+  const keepSeparate = zipMode === 'separate';
+
+  if (forceZip && !keepSeparate) {
+    const zipped = await zipAll(out, 'compressed-files.zip');
+    zipped.originalSize = out.reduce((a, o) => a + (o.originalSize || 0), 0);
+    return [zipped];
+  }
+
+  return out;
+}
+
+/* =========================================================
+   ROUTER
+   ========================================================= */
+async function route(kind, files, target, quality) {
+  if (kind === 'image' && target === 'docx') return imageToDocx(files);   // ← image → Word
+  if (kind === 'image' && target === 'pdf')  return imagesToPdf(files);
+  if (kind === 'image')                      return convertImages(files, target, quality);
+  if (kind === 'pdf' && target === 'docx')   return pdfToDocx(files[0]);
+  if (kind === 'pdf' && (target === 'png' || target === 'jpeg')) return pdfToImages(files[0], target);
+  if (kind === 'pdf' && target === 'txt')    return [{ name: `${baseName(files[0].name)}.txt`,
+                                                       blob: new Blob([await pdfToText(files[0])], { type: MIME.txt }) }];
+  if (kind === 'docx')                       return docxConvert(files[0], target);
+  if (kind === 'sheet' || kind === 'csv')    return sheetConvert(files[0], target);
+  if (kind === 'json')                       return jsonToCsv(files[0]);
+  if (kind === 'txt')                        return txtConvert(files[0], target);
+  throw new Error('This conversion is not supported yet');
+}
+
+/* =========================================================
+   MAIN BUTTON
+   ========================================================= */
+convertBtn.addEventListener('click', async () => {
+  if (!state.files.length) { toast('Add a file first.', 'warn'); return; }
+  if (settings.maintenance) { toast('Maintenance mode is active.', 'warn'); return; }
+
+  const isCompress = state.tab === 'compress';
+  const target = isCompress ? 'compressed' : targetSel.value;
+  if (!isCompress && !target) { toast('Choose an output format.', 'warn'); return; }
+
+  const quality = isCompress
+    ? parseFloat($('#compressLevel').value) || 0.7
+    : (parseFloat($('#quality').value) || 0.92);
+  const maxDim = isCompress ? parseInt($('#maxDim').value, 10) || 0 : 0;
+  const zipMode = isCompress ? $('#zipMode').value : 'separate';
+
+  const bytesIn = state.files.reduce((a, f) => a + f.size, 0);
+  const sourceExt = extOf(state.files[0].name);
+  const kind = isCompress ? 'batch' : EXT_KIND[extOf(state.files[0].name)];
+
+  clearResults();
+  statusEl.hidden = false;
+  statusText.textContent = isCompress
+    ? `Compressing ${state.files.length} file${state.files.length > 1 ? 's' : ''}…`
+    : `Converting ${state.files.length} file${state.files.length > 1 ? 's' : ''} to ${LABEL[target] || target.toUpperCase()}…`;
+  convertBtn.disabled = true;
+  progressWrap.hidden = true;
+  progressFill.style.width = '0%';
+
+  try {
+    let results;
+    if (isCompress) {
+      results = await compressBatch(state.files, quality, maxDim, zipMode);
+    } else {
+      results = await route(kind, state.files, target, quality);
+    }
+
+    let bytesOut = 0;
+
+    results.forEach(r => {
+      bytesOut += r.blob.size;
+      const url = URL.createObjectURL(r.blob);
+      state.results.push({ name: r.name, url, size: r.blob.size });
+
+      const orig = r.originalSize != null ? r.originalSize : bytesIn;
+      const saved = pct(orig, r.blob.size);
+      const showSave = (isCompress || r.originalSize != null) && saved > 0;
+
+      const row = document.createElement('div');
+      row.className = 'result';
+      row.innerHTML =
+        `<span>✅</span>
+         <span class="nm">${esc(r.name)}</span>
+         ${showSave ? `<span class="save">−${saved}% smaller</span>` : ''}
+         <span class="sz">${fmtBytes(r.blob.size)}</span>`;
+      const a = document.createElement('a');
+      a.className = 'btn sm';
+      a.href = url;
+      a.download = r.name;
+      a.textContent = 'Download';
+      row.appendChild(a);
+      resultsEl.appendChild(row);
+
+      if (results.length === 1) setTimeout(() => a.click(), 150);
+    });
+
+    pushLog({
+      file: state.files.map(f => f.name).join(', '),
+      kind,
+      source: sourceExt,
+      target,
+      files: state.files.length,
+      bytesIn,
+      bytesOut,
+      status: 'success'
+    });
+
+    const totalSaved = pct(bytesIn, bytesOut);
+    toast(isCompress
+      ? (totalSaved > 0 ? `Compressed! Total size reduced by ${totalSaved}%.` : 'Compression complete.')
+      : (target === 'docx' && kind === 'image'
+          ? `Word document ready — ${state.files.length} image${state.files.length > 1 ? 's' : ''} embedded.`
+          : (results.length > 1 ? `${results.length} files converted — free, as always.` : 'Conversion complete. Enjoy! 💜')));
+
+  } catch (err) {
+    console.error(err);
+    pushLog({
+      file: state.files.map(f => f.name).join(', '),
+      kind, source: sourceExt, target,
+      files: state.files.length,
+      bytesIn, bytesOut: 0,
+      status: 'failed',
+      error: err.message
+    });
+    toast('Failed: ' + err.message, 'error');
+    statusText.textContent = 'Operation failed.';
+  } finally {
+    convertBtn.disabled = false;
+    setTimeout(() => { statusEl.hidden = true; progressWrap.hidden = true; }, 900);
+  }
+});
+
+/* =========================================================
+   ADMIN PANEL
+   ========================================================= */
+const SESSION_KEY = 'fcf_session';
+const isLoggedIn = () => sessionStorage.getItem(SESSION_KEY) === '1';
+
+function renderAdmin() {
+  const logged = isLoggedIn();
+  $('#adminLogin').hidden = logged;
+  $('#adminDash').hidden = !logged;
+  if (logged) {
+    $('#whoami').textContent = adminCreds.email;
+    renderDashboard();
+  }
+}
+
+$('#loginForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const email = $('#adminEmail').value.trim().toLowerCase();
+  const pass  = $('#adminPass').value;
+
+  if (email === String(adminCreds.email).toLowerCase() && pass === adminCreds.password) {
+    sessionStorage.setItem(SESSION_KEY, '1');
+    $('#adminPass').value = '';
+    renderAdmin();
+    toast('Welcome back, admin. 👋');
+  } else {
+    toast('Invalid email or password.', 'error');
+  }
+});
+
+$('#logoutBtn').addEventListener('click', () => {
+  sessionStorage.removeItem(SESSION_KEY);
+  renderAdmin();
+  toast('Signed out.');
+});
+
+$('#refreshBtn').addEventListener('click', () => { renderDashboard(); toast('Dashboard refreshed.'); });
+
+function renderDashboard() {
+  const logs = getLogs();
+  const total = logs.length;
+  const success = logs.filter(l => l.status === 'success').length;
+  const failed = total - success;
+  const bytesIn  = logs.reduce((a, l) => a + (l.bytesIn  || 0), 0);
+  const bytesOut = logs.reduce((a, l) => a + (l.bytesOut || 0), 0);
+  const today = new Date().toDateString();
+  const todayCount = logs.filter(l => new Date(l.at).toDateString() === today).length;
+  const saved = pct(bytesIn, bytesOut);
+
+  $('#statCards').innerHTML = `
+    <div class="card stat"><div class="k">Total operations</div><div class="v">${total}</div></div>
+    <div class="card stat"><div class="k">Today</div><div class="v">${todayCount}</div></div>
+    <div class="card stat"><div class="k">Successful</div><div class="v" style="color:var(--ok)">${success}</div></div>
+    <div class="card stat"><div class="k">Failed</div><div class="v" style="color:${failed ? 'var(--danger)' : 'var(--muted)'}">${failed}</div></div>
+    <div class="card stat"><div class="k">Data in</div><div class="v">${fmtBytes(bytesIn)}</div></div>
+    <div class="card stat"><div class="k">Data out</div><div class="v">${fmtBytes(bytesOut)}</div></div>
+    <div class="card stat"><div class="k">Size saved</div><div class="v" style="color:var(--ok)">${saved}%</div></div>
+    <div class="card stat"><div class="k">Revenue</div><div class="v" style="color:var(--ok)">$0.00</div><div class="k" style="margin-top:2px">Free forever</div></div>
+  `;
+
+  $('#logCount').textContent = total ? `${total} record${total > 1 ? 's' : ''} (max 500)` : '';
+
+  const body = $('#logBody');
+  if (!logs.length) {
+    body.innerHTML = `<tr><td colspan="8"><div class="empty">No activity logged yet. It will appear here as visitors use the converter.</div></td></tr>`;
+  } else {
+    body.innerHTML = logs.slice(0, 60).map(l => {
+      const d = new Date(l.at);
+      const time = d.toLocaleString(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
+      const statusTag = l.status === 'success'
+        ? '<span class="tag ok">success</span>'
+        : `<span class="tag err" title="${esc(l.error || '')}">failed</span>`;
+      const savedCell = (l.bytesIn && l.bytesOut && l.bytesOut < l.bytesIn)
+        ? `<span class="tag ok">−${pct(l.bytesIn, l.bytesOut)}%</span>`
+        : '—';
+      return `<tr>
+        <td style="white-space:nowrap;color:var(--muted)">${esc(time)}</td>
+        <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${esc(l.file)}</td>
+        <td><span class="tag">${esc((l.source || '').toUpperCase())}</span></td>
+        <td><strong>${esc((l.target || '').toUpperCase())}</strong></td>
+        <td style="color:var(--muted)">${fmtBytes(l.bytesIn || 0)}</td>
+        <td style="color:var(--muted)">${fmtBytes(l.bytesOut || 0)}</td>
+        <td>${savedCell}</td>
+        <td>${statusTag}</td>
+      </tr>`;
+    }).join('');
+  }
+
+  $('#setMaxMB').value = settings.maxMB;
+  $('#setSiteName').value = settings.siteName;
+  $('#setMaintenance').checked = !!settings.maintenance;
+
+  const names = { image:'Images', pdf:'PDF', docx:'Word (DOCX)', sheet:'Spreadsheets', csv:'CSV', txt:'Text', json:'JSON' };
+  $('#kindToggles').innerHTML = Object.keys(names).map(k =>
+    `<label class="switch"><input type="checkbox" data-kind="${k}" ${settings.enabled[k] ? 'checked' : ''}> ${names[k]}</label>`
+  ).join('');
+}
+
+$('#saveSettings').addEventListener('click', () => {
+  settings.maxMB = Math.min(2048, Math.max(1, parseInt($('#setMaxMB').value, 10) || 1024));
+  settings.siteName = $('#setSiteName').value.trim() || 'FREE CONVERTER FOREVER';
+  settings.maintenance = $('#setMaintenance').checked;
+  $$('#kindToggles input[data-kind]').forEach(cb => { settings.enabled[cb.dataset.kind] = cb.checked; });
+  LS.set('fcf_settings', settings);
+  applySettings();
+  updateLimitBadge();
+  renderDashboard();
+  toast('Settings saved.');
+});
+
+$('#setMaintenance').addEventListener('change', () => {
+  settings.maintenance = $('#setMaintenance').checked;
+  LS.set('fcf_settings', settings);
+  toast(settings.maintenance ? 'Maintenance mode ON — operations disabled.' : 'Maintenance mode OFF.');
+});
+
+$('#changePass').addEventListener('click', () => {
+  const p1 = $('#newPass').value, p2 = $('#newPass2').value;
+  if (p1.length < 6) { toast('Password must be at least 6 characters.', 'warn'); return; }
+  if (p1 !== p2) { toast('Passwords do not match.', 'error'); return; }
+  adminCreds.password = p1;
+  LS.set('fcf_admin', adminCreds);
+  $('#newPass').value = ''; $('#newPass2').value = '';
+  toast('Admin password updated.');
+});
+
+$('#exportLogs').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(getLogs(), null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = `fcf-logs-${new Date().toISOString().slice(0, 10)}.json`;
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+  toast('Logs exported.');
+});
+
+$('#clearLogs').addEventListener('click', () => {
+  if (!confirm('Delete all logs? This cannot be undone.')) return;
+  LS.set('fcf_logs', []);
+  renderDashboard();
+  toast('All logs deleted.');
+});
+
+/* =========================================================
+   SETTINGS APPLIED TO SITE
+   ========================================================= */
+function applySettings() {
+  document.title = `${settings.siteName} — Free Online Image & Document Converter`;
+  const brand = document.querySelector('.brand span:last-child');
+  if (brand) brand.innerHTML = settings.siteName.replace(/FOREVER/i, '<b>FOREVER</b>');
+  const fs = document.querySelector('footer strong');
+  if (fs) fs.textContent = settings.siteName;
+}
+
+/* =========================================================
+   BOOT
+   ========================================================= */
+$('#year').textContent = new Date().getFullYear();
+renderTargets();
+setTabUI();
+applySettings();
+renderAdmin();
+
+window.FCF = { getLogs, settings, adminCreds };
+
+})();
+</script>
+</body>
+</html>
